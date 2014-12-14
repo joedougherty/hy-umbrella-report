@@ -18,14 +18,6 @@
         (for [ [hour_index hours] (enumerate (get parsed_json "hourly_forecast")) ]
             (if (> hour_index (int hour_cap))
                 (do
-                    (print (+
-                                (.strip (-> (get hours "FCTTIME") (get "civil"))) " :: "
+                    (print (+   (.strip (-> (get hours "FCTTIME") (get "civil"))) " :: "
                                 (.strip (-> (get hours "temp") (get "english"))) "F :: "
-                                (.strip (-> (get hours "pop"))) "%"
-                            )
-                    )
-                )
-            )
-        )
-    )
-)
+                                (.strip (-> (get hours "pop"))) "%" )))))))
